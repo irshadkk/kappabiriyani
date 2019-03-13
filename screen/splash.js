@@ -8,7 +8,7 @@ export default class splash extends Component{
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>To get stajjjjrted, edit App.js</Text>
         <Button
           title="Go to Details"
           onPress={() => this.props.navigation.navigate('routescreen')}
