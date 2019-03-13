@@ -1,0 +1,22 @@
+step 1:- create a new project kappabiriyani
+         (react-native init kappabiriyani).
+        
+step 2:- run the project.
+         ios:-      .1)open the xcodeproject in ios folder.
+                    .2)(react-native run-ios)
+                    
+          android:-.1)start android AVD.
+                   .2)create local.propaties file in android folder
+                       (sdk.dir=/Users/username/Library/Android/Sdk)
+                   .3)(react-native run-android)
+
+step 3:- install design library native base.
+          (npm install native-base --save)
+
+step 4:- link the native libraryies in react native 
+          (react-native link)
+          error: missing /project name/android/app/src/main/assets/fonts/AntDesign.ttf
+          solve: download AntDesign.ttf and paste the path
+
+step 5:- install react navigation library
+         (npm install react-navigation@2.18.2)  
