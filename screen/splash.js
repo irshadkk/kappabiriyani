@@ -45,7 +45,7 @@ export default class Splash extends Component {
                     blurRadius={0}
                     source={require("../img/bg.jpg")}
                     style={styles.splash_bg_img}>
-                      <Image  source={require("../img/logo.png")} style={{width:120,height:120}}/>
+                      <Image  source={require("../img/logo1.jpg")} style={{width:130,height:70}}/>
                 <Text style={styles.splash_heading}>Kappabiriyani.</Text>
                 <Text>Eat.Drink.Enjoy.Good food</Text>
                 </ImageBackground>

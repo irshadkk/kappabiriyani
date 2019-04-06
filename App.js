@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import { createStackNavigator,createBottomTabNavigator} from "react-navigation";
+import { createStackNavigator,createBottomTabNavigator,createDrawerNavigator} from "react-navigation";
 import { Icon } from 'native-base';
 import styles from './styles/styles.js';
+import SideMenu from './components/sidenav';
 //import main screen
 import starter from './screen/splash';
 import register from './screen/register';
-import login from './screen/login';
 
 //import tab 1 screens
 import home from './screen/Tab1/home';
@@ -19,6 +19,8 @@ import cart from './screen/Tab3/cart';
 
 //import tab 4 screens
 import user from './screen/Tab4/user';
+
+import admin_products from './screen/admin/admin_products';
 
 //tab1 routes navigator
 const Tab1navigator = createStackNavigator({
@@ -45,32 +47,32 @@ const TabsNavigator = createBottomTabNavigator({
     tabBarLabel: 'Home',
     tabBarIcon: ({ focused }) => (
         focused
-            ? <Icon name="home" style={styles.factive} />
-            : <Icon name="home" style={styles.finactive} />
+            ? <Icon type='FontAwesome' name="home" style={styles.factive} />
+            : <Icon type='FontAwesome' name="home" style={styles.finactive} />
     ),
 })},
   Search: { screen: Tab2navigator,navigationOptions: () => ({
     tabBarLabel: 'User',
     tabBarIcon: ({ focused }) => (
         focused
-            ? <Icon name="search" style={styles.factive} />
-            : <Icon name="search" style={styles.finactive} />
+            ? <Icon type="FontAwesome" name="search" style={styles.factive} />
+            : <Icon type="FontAwesome"  name="search" style={styles.finactive} />
     ),
 })},
   cart: { screen: Tab3navigator,navigationOptions: () => ({
     tabBarLabel: 'User',
     tabBarIcon: ({ focused }) => (
         focused
-            ? <Icon name="basket" style={styles.factive} />
-            : <Icon name="basket" style={styles.finactive} />
+            ? <Icon type='FontAwesome' name="shopping-bag" style={styles.factive} />
+            : <Icon type='FontAwesome' name="shopping-bag" style={styles.finactive} />
     ),
 })},
   user: { screen: Tab4navigator,navigationOptions: () => ({
     tabBarLabel: 'User',
     tabBarIcon: ({ focused }) => (
         focused
-            ? <Icon name="person" style={styles.factive} />
-            : <Icon name="person" style={styles.finactive} />
+            ? <Icon type='FontAwesome' name="user-circle" style={styles.factive} />
+            : <Icon type='FontAwesome' name="user-circle" style={styles.finactive} />
     ),
 })
 }
@@ -81,32 +83,50 @@ const TabsNavigator = createBottomTabNavigator({
   tabBarOptions: {
       showIcon: true,
       style: {
-          backgroundColor: "#fff",
           overflow: "hidden",
-          height:54
+          elivation:0,
+          shadowOpacity: 0,
+          borderColor:'#fff'
       },
       labelStyle: {
-          fontSize: 11,
+          fontSize:0,
           marginBottom:5,
           padding: 0,
           fontFamily: 'OpenSans-SemiBold'
       },
       activeTintColor: "#56b900",
       inactiveTintColor: "#575859",
-      indicatorStyle: { backgroundColor: '#fff' }
   }
 });
+//end  main Tab navigator
+
+
+//admin router
+const admin_productstack = createStackNavigator({
+  admin_product: {screen:admin_products},
+  registerscreens:{screen:register},
+});
+
+const MyDrawerNavigator = createDrawerNavigator({
+  admin_products: {screen: admin_productstack}
+},{
+  contentComponent: SideMenu,
+  drawerWidth: 300
+});
+//end admin router
 
 //main navigatior
 const AppNavigator = createStackNavigator({
   splashscreen: {screen: starter},
   registerscreen:{screen:register},
-  loginscreen:{screen:login},
+  adminroute:{screen:MyDrawerNavigator,navigationOptions:()=>({
+    header:null
+  })},
   routescreen:{screen:TabsNavigator,navigationOptions:()=>({
     header:null
-  })
-  }
+  })}
 });
+//end main navigatior
 
 export default class App extends Component{
   static navigationOptions = {

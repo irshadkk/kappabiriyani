@@ -20,3 +20,11 @@ step 4:- link the native libraryies in react native
 
 step 5:- install react navigation library
          (npm install react-navigation@2.18.2)  
+
+step 6:- install toast
+         (npm i react-native-easy-toast --save) 
+
+
+-----------------------------------------------------------------------------------------------
+color : #52232d
+green:#3da641
