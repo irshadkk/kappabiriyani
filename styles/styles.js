@@ -80,7 +80,11 @@ export default StyleSheet.create({
     backgroundColor: '#3da641',
     borderRadius: 4,
     marginTop: 50,
-    marginLeft: 2,
+    height: 50
+  },
+  cart_btn: {
+    backgroundColor: '#3da641',
+    borderRadius: 4,
     height: 50
   },
   login_btn_text: {
@@ -201,6 +205,19 @@ export default StyleSheet.create({
   offer_price1: {
     color: '#000000',
     fontSize: 12,
+    fontWeight: '500',
+    marginRight: 10
+  },
+  item_price2: {
+    fontSize: 18,
+    fontWeight: '500',
+    marginRight: 10,
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid'
+  },
+  offer_price2: {
+    color: '#000000',
+    fontSize: 18,
     fontWeight: '500',
     marginRight: 10
   },

@@ -8,7 +8,7 @@ const resetAction = StackActions.reset({
 })
 const resetActions = StackActions.reset({
   index: 0,
-  actions: [NavigationActions.navigate({ routeName: 'registerscreen' })],
+  actions: [NavigationActions.navigate({ routeName: 'routescreen' })],
 })
 export default class Splash extends Component {
     static navigationOptions = {

@@ -10,6 +10,7 @@ import register from './screen/register';
 
 //import tab 1 screens
 import home from './screen/Tab1/home';
+import product_details from './screen/Tab1/product_details';
 
 //import tab 2 screens
 import  search from './screen/Tab2/search';
@@ -24,7 +25,8 @@ import admin_products from './screen/admin/admin_products';
 
 //tab1 routes navigator
 const Tab1navigator = createStackNavigator({
-  Homescreen: {screen: home}
+  Homescreen: {screen: home},
+  products_detaiscreen:{screen:product_details}
 });
 
 //tab2 routes navigator
